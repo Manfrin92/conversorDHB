@@ -1,24 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useCallback } from 'react';
 
 function App() {
+  const [decimalToBinary, setDecimalToBinary] = useState();
+  const [binaryToDecimal, setBinaryToDecimal] = useState();
+
+  const handleSetDecimalToBinary = useCallback(() => {
+    console.log('setDecimalToBinary');
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Convert:</h1>
+      <body>
+        <div>
+          <p>
+            Decimal:
+
+            <input type="text" />
+
+            <button type="button" onClick={() => handleSetDecimalToBinary()}>RUN</button>
+
+          </p>
+          <p>
+            Reponse in binary:
+
+            <text>resposta</text>
+
+          </p>
+        </div>
+
+        <div>
+          <p>
+            Binary:
+
+            <input type="text" />
+
+            <button type="button">RUN</button>
+
+          </p>
+          <p>
+            Reponse in decimal:
+
+            <text>resposta</text>
+
+          </p>
+        </div>
+      </body>
     </div>
   );
 }
